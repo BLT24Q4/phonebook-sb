@@ -38,8 +38,12 @@ public class PhonebookDaoImpl implements PhonebookDao {
 
 	@Override
 	public int delete(Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
+		try {
+			return phonebookMapper.delete(id);
+		} catch (Exception e) {
+			throw new PhonebookDaoException(
+					"전화번호 삭제 중 오류 발생: " +id, e);
+		}
 	}
 
 	@Override

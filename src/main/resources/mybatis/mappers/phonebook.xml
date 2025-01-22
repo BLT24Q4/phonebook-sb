@@ -25,4 +25,7 @@
 	WHERE id=#{id}
 	</update>
 
+	<delete id="delete" parameterType="int">
+	DELETE FROM phonebook WHERE id=#{id}
+	</delete>
 </mapper>
